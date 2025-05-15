@@ -16,10 +16,17 @@ export default function LenisScroller() {
       requestAnimationFrame(raf);
     };
 
-    requestAnimationFrame(raf);
+    const onLoad = () => {
+      requestAnimationFrame(raf);
+    };
 
-    return () => lenis.destroy();
+    window.addEventListener('load', onLoad);
+
+    return () => {
+      window.removeEventListener('load', onLoad);
+      lenis.destroy();
+    };
   }, []);
 
-  return null; 
+  return null;
 }
