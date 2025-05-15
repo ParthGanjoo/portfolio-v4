@@ -133,6 +133,18 @@ const PhotographyPage = () => {
   return (
     <AnimatePage>
       <div className="px-4 py-30 max-w-[1100px] mx-auto">
+
+        {/* Heading and Intro Text */}
+        <div className="text-center mb-24 mt-12 mx-auto max-w-[300px] sm:max-w-md md:max-w-lg lg:max-w-[850px]">
+  <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white ">
+    My Photo Gallery
+  </h2>
+  <p className="text-md sm:text-lg text-gray-300 leading-relaxed mt-5">
+    Shot across India, from Corbett to Kabini, and even Tanzania, of all places! Some of these photos were taken while standing chest deep in the Indian Ocean, some while lying on wet cow dung in the rain, or halfway up a tree! It’s never just about pressing the shutter button.
+  </p>
+</div>
+
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((src, index) => (
             <div key={index} className="overflow-hidden rounded-md">
@@ -149,5 +161,6 @@ const PhotographyPage = () => {
     </AnimatePage>
   );
 };
+
 
 export default PhotographyPage;

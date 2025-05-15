@@ -100,87 +100,95 @@ const Work = () => {
 
   return (
     <AnimatePage>
-    <section className="flex flex-col items-center px-4 py-30">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-4 lg:gap-7 w-full max-w-[1100px]">
-        {projects.map((project) => (
-          <a
-            key={project.id}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-          >
-            <div
-              className={`cursor-pointer w-full rounded-[20px] transition-all duration-800 relative overflow-hidden ${
-                hoveredId !== null && hoveredId !== project.id
-                  ? 'blur opacity-30 scale-[0.98]'
-                  : 'opacity-100'
-              }`}
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              style={{
-                backgroundColor: project.bgColor,
-                padding: '10px 10px 50px 10px',
-              }}
+      <section className="flex flex-col items-center px-4 py-30">
+        {/* Heading and Intro Text */}
+        <div className="text-center mb-24 mt-12 mx-auto max-w-[300px] sm:max-w-md md:max-w-lg lg:max-w-[850px]">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+            My Projects
+          </h2>
+          <p className="text-md sm:text-lg text-gray-300 leading-relaxed mt-5">
+          I mainly design digital products from 0 to 1, but I also get distracted by random creative sparks. One day I’m redesigning a rock album cover from the '80s, the next I'm deep in 3D modeling a desk organizer or building an Arduino guitar delay pedal, because why not?!
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-4 lg:gap-7 w-full max-w-[1100px]">
+          {projects.map((project) => (
+            <a
+              key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
             >
-              <div className="w-full flex justify-center mb-6 relative">
-                <div
-                  className={`relative rounded-[10px] overflow-hidden transition-transform duration-800 ${
-                    hoveredId === project.id ? 'scale-[1.04]' : ''
-                  } w-full max-w-md`}
-                >
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    className="rounded-[10px] w-full h-auto object-contain mx-auto"
-                  />
+              <div
+                className={`cursor-pointer w-full rounded-[20px] transition-all duration-800 relative overflow-hidden ${
+                  hoveredId !== null && hoveredId !== project.id
+                    ? 'blur opacity-30 scale-[0.98]'
+                    : 'opacity-100'
+                }`}
+                onMouseEnter={() => setHoveredId(project.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                style={{
+                  backgroundColor: project.bgColor,
+                  padding: '10px 10px 50px 10px',
+                }}
+              >
+                <div className="w-full flex justify-center mb-6 relative">
+                  <div
+                    className={`relative rounded-[10px] overflow-hidden transition-transform duration-800 ${
+                      hoveredId === project.id ? 'scale-[1.04]' : ''
+                    } w-full max-w-md`}
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="rounded-[10px] w-full h-auto object-contain mx-auto"
+                    />
+                    <div
+                      className="absolute bottom-0 left-0 w-full h-[30%] pointer-events-none"
+                      style={{
+                        background: `linear-gradient(to bottom, rgba(0,0,0,0) 0%, ${project.bgColor} 100%)`,
+                      }}
+                    />
+                  </div>
 
                   <div
-                    className="absolute bottom-0 left-0 w-full h-[30%] pointer-events-none"
-                    style={{
-                      background: `linear-gradient(to bottom, rgba(0,0,0,0) 0%, ${project.bgColor} 100%)`,
-                    }}
-                  />
+                    className={`absolute top-0 right-0 bg-[#111111]/30 rounded-full p-1 cursor-pointer transition-transform duration-800 ${
+                      hoveredId === project.id ? 'rotate-45' : ''
+                    }`}
+                  >
+                    <FiArrowUpRight className="text-white text-xl" />
+                  </div>
                 </div>
 
                 <div
-                  className={`absolute top-0 right-0 bg-[#111111]/30 rounded-full p-1 cursor-pointer transition-transform duration-800 ${
-                    hoveredId === project.id ? 'rotate-45' : ''
-                  }`}
-                >
-                  <FiArrowUpRight className="text-white text-xl" />
-                </div>
-              </div>
-
-              <div
-                className={`flex justify-center mb-4 transition-transform duration-800 ${
-                  hoveredId === project.id ? 'scale-[1.04]' : 'scale-100'
-                }`}
-              >
-                <span className="px-4.5 py-2.5 rounded-full text-sm font-medium text-white bg-[#18181B]/50 backdrop-blur">
-                  {project.genre}
-                </span>
-              </div>
-
-              <div className="max-w-[80%] mx-auto text-center">
-                <p
-                  className={`text-md mt-2 font-medium transition-transform duration-800 ${
+                  className={`flex justify-center mb-4 transition-transform duration-800 ${
                     hoveredId === project.id ? 'scale-[1.04]' : 'scale-100'
                   }`}
-                  style={{ color: project.textColor }}
                 >
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
+                  <span className="px-4.5 py-2.5 rounded-full text-sm font-medium text-white bg-[#18181B]/50 backdrop-blur">
+                    {project.genre}
+                  </span>
+                </div>
 
-      
-    </section>
+                <div className="max-w-[80%] mx-auto text-center">
+                  <p
+                    className={`text-md mt-2 font-medium transition-transform duration-800 ${
+                      hoveredId === project.id ? 'scale-[1.04]' : 'scale-100'
+                    }`}
+                    style={{ color: project.textColor }}
+                  >
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
     </AnimatePage>
   );
 };
+
 
 export default Work;
