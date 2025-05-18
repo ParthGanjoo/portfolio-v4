@@ -21,5 +21,5 @@ export default function LenisScroller() {
     return () => lenis.destroy();
   }, []);
 
-  return null; 
+  return null;
 }

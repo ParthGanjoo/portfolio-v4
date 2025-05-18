@@ -106,7 +106,7 @@ const Work = () => {
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
             My Projects
           </h2>
-          <p className="text-md sm:text-lg text-gray-300 leading-relaxed mt-5">
+          <p className="text-md sm:text-lg text-white leading-relaxed mt-5">
           I mainly design digital products from 0 to 1, but I also get distracted by random creative sparks. One day I’m redesigning a rock album cover from the '80s, the next I'm deep in 3D modeling a desk organizer or building an Arduino guitar delay pedal, because why not?!
           </p>
         </div>

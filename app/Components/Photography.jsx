@@ -139,7 +139,7 @@ const PhotographyPage = () => {
   <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white ">
     My Photo Gallery
   </h2>
-  <p className="text-md sm:text-lg text-gray-300 leading-relaxed mt-5">
+  <p className="text-md sm:text-lg text-white leading-relaxed mt-5">
     Shot across India, from Corbett to Kabini, and even Tanzania, of all places! Some of these photos were taken while standing chest deep in the Indian Ocean, some while lying on wet cow dung in the rain, or halfway up a tree! It’s never just about pressing the shutter button.
   </p>
 </div>
