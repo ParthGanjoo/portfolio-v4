@@ -17,18 +17,18 @@ export const metadata = {
   title: "Parth Ganjoo",
   description: "Hi, I'm Parth — a CS + Design student at IIIT Delhi. I design digital products, develop in XR, and shoot wildlife photography.",
   openGraph: {
-    title: "Parth Ganjoo | Product Designer & Developer",
+    title: "Parth Ganjoo",
     description: "Designing products, building experiences, and capturing wildlife.",
     url: "https://parthganjoo.vercel.app",
     siteName: "Parth Ganjoo",
-    // images: [
-    //   {
-    //     url: "/og-image.png", // Place this image in your public folder
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Parth Ganjoo Portfolio Preview",
-    //   },
-    // ],
+    images: [
+      {
+        url: "/MetaPhoto.JPG", // Place this image in your public folder
+        width: 1200,
+        height: 630,
+        alt: "Parth Ganjoo Portfolio Preview",
+      },
+    ],
     type: "website",
   }
 };
