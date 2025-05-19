@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://parthganjoo.vercel.app
+
+# Sitemaps
+Sitemap: https://parthganjoo.vercel.app/sitemap.xml
